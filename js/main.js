@@ -1,9 +1,9 @@
 //Esercizio Dadi:
 
 //Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
-var numeroGiocatore = Math.floor(Math.random()*5) + 1;
+var numeroGiocatore = Math.floor(Math.random()*6) + 1;
 console.log('Giocatore gioca il numero ' + numeroGiocatore)
-var numeroComputer = Math.floor(Math.random()*5) + 1;
+var numeroComputer = Math.floor(Math.random()*6) + 1;
 console.log('Computer gioca il numero ' + numeroComputer);
 
 
@@ -30,19 +30,24 @@ var emailDatabase = ["Giovanni", "Antonio", "Paolo"];
 var richiestaEmail = prompt("Inserisci la tua email")
 
 // 3 - Controlla che sia nella lista di chi può accedere.
-
+var emailTrovata = false;
 for (i=0; i < emailDatabase.length; i++) {
-    if (richiestaEmail == emailDatabase[i]) {
-        document.getElementById("email").innerHTML = "Il tuo nome è già presente nel nostro Database"
-        console.log("Il tuo nome è gia presente nel nostro Database");
-    } else if (richiestaEmail !== emailDatabase[1]) {
-        document.getElementById("email").innerHTML = "Puoi aggiungere la tua email"
-        console.log("Puoi aggiungere la tua email")
-    }
+    
+    if ((richiestaEmail) == emailDatabase[i]) 
+    {
+        emailTrovata = true;
+    } 
+    
 } 
+
 
 
 // 4 - Se non può accedere invia un messaggio.
 
-
+if (emailTrovata == true) {
+    console.log("Non puoi accedere");
+}
+else {
+    console.log("Puoi accedere");
+}
 
